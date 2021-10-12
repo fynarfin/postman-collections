@@ -1,0 +1,1343 @@
+{
+	"info": {
+		"_postman_id": "1ed8f1aa-81b6-4328-9f2e-b53d437e43cd",
+		"name": "Vodafone Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account Lifecycle",
+			"item": [
+				{
+					"name": "create client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"officeId\": 1,\n  \"fullname\": \"Client of group\",\n  \"groupId\": 1,\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"active\": true,\n  \"activationDate\": \"04 March 2009\",\n  \"datatables\": [\n    {\n      \"registeredTableName\": \"Client Beneficiary information\",\n      \"data\": \"data\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/clients",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get client accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/clients/1/accounts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"clients",
+								"1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search client by external id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/clients?externalId=VOD10033",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "externalId",
+									"value": "VOD10033"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientId\": 1,\n  \"productId\": 1,\n  \"locale\": \"en\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"submittedOnDate\": \"01 March 2011\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=approve",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "approve"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block debit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=blockDebit",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "blockDebit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblock account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=unblock",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "unblock"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=block",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "block"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblock debit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=unblockDebit",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "unblockDebit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=activate",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "activate"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "string"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/transactions?command=withdrawal",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "withdrawal"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post Interest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "string"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/transactions?command=postInterestAsOn",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "postInterestAsOn"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "string"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/transactions?command=deposit",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "deposit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account charge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"chargeId\": 2,\n  \"locale\": \"en\",\n  \"amount\": 100,\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"dueDate\": \"29 April 2013\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/charges",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1",
+								"charges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay charge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"amount\": 60,\n  \"dueDate\": \"12 September 2013\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/charges/1?command=paycharge",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1",
+								"charges",
+								"1"
+							],
+							"query": [
+								{
+									"key": "command",
+									"value": "paycharge"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?staffInSelectedOfficeOnly=false&chargeStatus=all",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsaccounts",
+								"1"
+							],
+							"query": [
+								{
+									"key": "staffInSelectedOfficeOnly",
+									"value": "false"
+								},
+								{
+									"key": "chargeStatus",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get savings product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsproducts/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"savingsproducts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tenant Initialization ",
+			"item": [
+				{
+					"name": "Create Market (tenant) User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"newuser\",\n  \"firstname\": \"Test\",\n  \"lastname\": \"User\",\n  \"email\": \"whatever@mifos.org\",\n  \"officeId\": 1,\n  \"staffId\": 1,\n  \"roles\": \"[2,3]\",\n  \"sendPasswordToEmail\": true,\n  \"isSelfServiceUser\": true\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Market (tenant) User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Test\",\n  \"password\": \"window75\",\n  \"repeatPassword\": \"window75\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tenant APIs",
+			"item": [
+				{
+					"name": "Set Currency",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currencies\": \"[\"KES\",\"BND\",\"LBP\",\"GHC\",\"USD\",\"XOF\",\"AED\",\"AMD\"]\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/currencies",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"currencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create charge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Loan Service fee\",\n  \"chargeAppliesTo\": 1,\n  \"currencyCode\": \"USD\",\n  \"locale\": \"en\",\n  \"amount\": 230.56,\n  \"chargeTimeType\": 1,\n  \"chargeCalculationType\": 1,\n  \"chargePaymentMode\": 1,\n  \"active\": \"true\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/charges",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"charges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create payment types",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"cash\",\n  \"description\": \"cash payment type\",\n  \"isCashPayment\": true,\n  \"position\": 1\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/paymenttypes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"paymenttypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create data tables",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"apptableName\": \"m_client\",\n  \"datatableName\": \"extra_client_details\",\n  \"multiRow\": true,\n  \"columns\": [\n    {\n      \"name\": \"DOB\",\n      \"type\": \"String\",\n      \"code\": \"Gender\",\n      \"mandatory\": true,\n      \"length\": 1653\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/datatables",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"datatables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create reports",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reportName\": \"Completely New Report\",\n  \"reportType\": \"Table\",\n  \"reportSubType\": \"string\",\n  \"reportCategory\": \"Loan\",\n  \"description\": \"Just An Example\",\n  \"reportSql\": \"select 'very good sql' as AComment\",\n  \"reportParameters\": [\n    {}\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/reports",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update scheduled jobs",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"displayName\": \"Update loan Summary\",\n  \"cronExpression\": \"0 0 22 1/1 * ? *\",\n  \"active\": false\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/jobs/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"jobs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bank Onboarding APIs ",
+			"item": [
+				{
+					"name": "Create office (bank)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Good Friday\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"openingDate\": \"2021-10-12\",\n  \"parentId\": 2,\n  \"externalId\": \"SYS54-88\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/offices",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"offices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create gl accounts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Cash at Bangalore\",\n  \"glCode\": \"100001\",\n  \"manualEntriesAllowed\": true,\n  \"type\": \"1\",\n  \"tagId\": \"10\",\n  \"parentId\": 1,\n  \"usage\": {\n    \"id\": 0,\n    \"code\": \"string\",\n    \"value\": \"string\"\n  },\n  \"description\": \"Desc\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/glaccounts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"glaccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create fund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EU Agri Fund\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/funds",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"funds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create loan products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bWlmb3M6cGFzc3dvcmQ="
+							},
+							{
+								"key": "fineract-platform-tenantid",
+								"value": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"LP Accrual Accounting\",\n  \"shortName\": \"LPAA\",\n  \"currencyCode\": \"USD\",\n  \"locale\": \"en_GB\",\n  \"digitsAfterDecimal\": 2,\n  \"inMultiplesOf\": 0,\n  \"principal\": 0,\n  \"numberOfRepayments\": 12,\n  \"repaymentEvery\": 1,\n  \"repaymentFrequencyType\": 2,\n  \"transactionProcessingStrategyId\": 1,\n  \"interestRatePerPeriod\": 1.75,\n  \"interestRateFrequencyType\": 2,\n  \"amortizationType\": 1,\n  \"interestType\": 0,\n  \"interestCalculationPeriodType\": 1,\n  \"daysInMonthType\": 1,\n  \"daysInYearType\": 1,\n  \"isInterestRecalculationEnabled\": false,\n  \"accountingRule\": 3,\n  \"fundSourceAccountId\": 4,\n  \"loanPortfolioAccountId\": 8,\n  \"receivableInterestAccountId\": 9,\n  \"receivableFeeAccountId\": 11,\n  \"receivablePenaltyAccountId\": 10,\n  \"interestOnLoanAccountId\": 34,\n  \"incomeFromFeeAccountId\": 37,\n  \"incomeFromPenaltyAccountId\": 35,\n  \"overpaymentLiabilityAccountId\": 2,\n  \"writeOffAccountId\": 41\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1/loanproducts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1",
+								"loanproducts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
