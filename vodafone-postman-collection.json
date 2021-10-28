@@ -32,7 +32,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"officeId\": 1,\n  \"fullname\": \"Client of group\",\n  \"groupId\": 1,\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"active\": true,\n  \"activationDate\": \"04 March 2009\",\n  \"datatables\": [\n    {\n      \"registeredTableName\": \"Client Beneficiary information\",\n      \"data\": \"data\"\n    }\n  ]\n}"
+							"raw": "{\n  \"officeId\": {{officeId}},\n  \"fullname\": \"{{fullName}}\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"active\": true,\n  \"activationDate\": \"{{activationDate}}\",\n  \"datatables\": [\n    {\n      \"registeredTableName\": \"Client Beneficiary information\",\n      \"data\": \"data\"\n    }\n  ]\n}"
 						},
 						"url": {
 							"raw": "https://localhost:8443/fineract-provider/api/v1/clients",
@@ -153,7 +153,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"clientId\": 1,\n  \"productId\": 1,\n  \"locale\": \"en\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"submittedOnDate\": \"01 March 2011\"\n}"
+							"raw": "{\n  \"clientId\": {{clientId}},\n  \"productId\": {{productId}},\n  \"locale\": \"en\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"submittedOnDate\": \"{{submittedDate}}\"\n}"
 						},
 						"url": {
 							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts",
@@ -196,10 +196,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"{{approvedOnDate}}\",\n  \"activatedOnDate\": \"{{activatedOnDate}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=approve",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?command=approve",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -210,7 +210,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -246,10 +246,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"{{approvedOnDate}}\",\n  \"activatedOnDate\": \"{{activatedOnDate}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=blockDebit",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?command=blockDebit",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -260,7 +260,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -296,10 +296,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"{{approvedOnDate}}\",\n  \"activatedOnDate\": \"{{activatedOnDate}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=unblock",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?command=unblock",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -310,7 +310,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -346,10 +346,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"{{approvedOnDate}}\",\n  \"activatedOnDate\": \"{{activatedOnDate}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=block",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?command=block",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -360,7 +360,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -396,10 +396,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"{{approvedOnDate}}\",\n  \"activatedOnDate\": \"{{activatedOnDate}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=unblockDebit",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?command=unblockDebit",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -410,7 +410,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -446,10 +446,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"05 September 2014\",\n  \"activatedOnDate\": \"05 September 2014\"\n}"
+							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"approvedOnDate\": \"{{approvedOnDate}}\",\n  \"activatedOnDate\": \"{{activatedOnDate}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?command=activate",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?command=activate",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -460,7 +460,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -496,10 +496,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "string"
+							"raw": "{\n  \"locale\": \"en\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"transactionDate\": \"{{transactionDate}}\",\n  \"transactionAmount\": \"{{transactionAmount}}\",\n  \"paymentTypeId\": \"{{paymentTypeId}}\",\n  \"accountNumber\": \"{{accountNumber}}\",\n  \"checkNumber\": \"{{checkNumber}}\",\n  \"routingCode\": \"{{routingCode}}\",\n  \"receiptNumber\": \"{{receiptNumber}}\",\n  \"bankNumber\": \"{{bankNumber}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/transactions?command=withdrawal",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}/transactions?command=withdrawal",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -510,7 +510,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1",
+								"{{savingsId}}",
 								"transactions"
 							],
 							"query": [
@@ -550,7 +550,7 @@
 							"raw": "string"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/transactions?command=postInterestAsOn",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}/transactions?command=postInterestAsOn",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -561,7 +561,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1",
+								"{{savingsId}}",
 								"transactions"
 							],
 							"query": [
@@ -598,10 +598,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "string"
+							"raw": "{\n    \"locale\": \"en\",\n    \"dateFormat\": \"dd MMMM yyyy\",\n    \"transactionDate\": \"{{transactionDate}}\",\n    \"transactionAmount\": \"{{transactionAmount}}\",\n    \"paymentTypeId\": \"{{paymentTypeId}}\",\n    \"accountNumber\": \"{{accountNumber}}\",\n    \"checkNumber\": \"{{checkNumber}}\",\n    \"routingCode\": \"{{routingCode}}\",\n    \"receiptNumber\": \"{{receiptNumber}}\",\n    \"bankNumber\": \"{{bankNumber}}\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/transactions?command=deposit",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}/transactions?command=deposit",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -612,7 +612,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1",
+								"{{savingsId}}",
 								"transactions"
 							],
 							"query": [
@@ -652,7 +652,7 @@
 							"raw": "{\n  \"chargeId\": 2,\n  \"locale\": \"en\",\n  \"amount\": 100,\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"dueDate\": \"29 April 2013\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/charges",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}/charges",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -663,7 +663,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1",
+								"{{savingsId}}",
 								"charges"
 							]
 						}
@@ -697,7 +697,7 @@
 							"raw": "{\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"locale\": \"en\",\n  \"amount\": 60,\n  \"dueDate\": \"12 September 2013\"\n}"
 						},
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1/charges/1?command=paycharge",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}/charges/{{chargeId}}?command=paycharge",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -708,9 +708,9 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1",
+								"{{savingsId}}",
 								"charges",
-								"1"
+								"{{chargeId}}"
 							],
 							"query": [
 								{
@@ -741,7 +741,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/1?staffInSelectedOfficeOnly=false&chargeStatus=all",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsaccounts/{{savingsId}}?staffInSelectedOfficeOnly=false&chargeStatus=all",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -752,7 +752,7 @@
 								"api",
 								"v1",
 								"savingsaccounts",
-								"1"
+								"{{savingsId}}"
 							],
 							"query": [
 								{
@@ -787,7 +787,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsproducts/1",
+							"raw": "https://localhost:8443/fineract-provider/api/v1/savingsproducts/{{productId}}",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -798,7 +798,7 @@
 								"api",
 								"v1",
 								"savingsproducts",
-								"1"
+								"{{productId}}"
 							]
 						}
 					},
